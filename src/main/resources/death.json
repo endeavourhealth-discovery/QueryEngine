@@ -1,0 +1,67 @@
+{
+  "ModelDocument": {
+    "DocumentInfo": {
+      "documentId": "8fa7a991-0b16-4c36-aee3-8ec9c39330ff",
+      "documentIri": "http://DiscoveryDataService.org/InformationModel/Updates/ValueSet/Examples1",
+      "modelIri": "http://DiscoveryDataService.org/InformationModel/Updates/ValueSet/Examples1.1",
+      "effectiveDate": "2019-19-30:14:28:15",
+      "publisher": "DC_ORG_EHCT",
+      "purpose": "Reference",
+      "baseModelVersion": "1.0.0",
+      "documentStatus": "Draft",
+      "prefix": {
+        "label": "cm:",
+        "iri": "http://DiscoveryDataService.org/InformationModel/Core/"
+      }
+    },
+    "ValueSet": [
+      {
+        "id": "ImpliedDeath",
+        "name": "Concepts that imply death",
+        "expression": [
+          {
+            "classOrSubtypes": [
+              "cm:SN_95281009|Sudden cardiac death (disorder)",
+              "cm:SN_168461002|Postmortem examination (procedure)",
+              "cm:SN_168462009|Postmortem examination requested (situation)",
+              "cm:SN_168465006|Postmortem examination done (situation)",
+              "cm:SN_169104005|Post-mortem radiology normal (finding)",
+              "cm:SN_184084003|Registration ghost - deceased (finding)",
+              "cm:SN_184276009|Awaiting hospital death discharge letter (finding)",
+              "cm:SN_184277000|Received hospital death discharge letter (finding)",
+              "cm:SN_184278005|Asked for hospital death discharge letter (finding)",
+              "cm:SN_184305005|Cause of death (observable entity)",
+              "cm:SN_184307002|Postmortem report received (finding)",
+              "cm:SN_213959003|Killed by rolling stock (event)",
+              "cm:SN_242055009|Accidentally killed (event)",
+              "cm:SN_270102001|Report for Coroner (record artifact)",
+              "cm:SN_270115005|Unexpected death-Coroner told (finding)",
+              "cm:SN_270116006|Postmortem report (record artifact)",
+              "cm:SN_275656009|Stat B,C and F cremation certs (record artifact)",
+              "cm:SN_307928008|Death administrative procedure (procedure)",
+              "cm:SN_307929000|Death certification status (finding)",
+              "cm:SN_307930005|Death certificate (record artifact)",
+              "cm:SN_308468002|Referral to coroner (procedure)",
+              "cm:SN_308647005|Cremation certification status (finding)",
+              "cm:SN_308806009|Coroner's report status (finding)",
+              "cm:SN_313384009|Place of death (observable entity)",
+              "cm:SN_371758005|Postmortem result (finding)",
+              "cm:SN_399753006|Date of death (observable entity)",
+              "cm:SN_401321000|Hospital notified of death (finding)",
+              "cm:SN_419099009|Dead (finding)",
+              "cm:SN_419620001|Death (event)",
+              "cm:SN_704199009|Request for postmortem examination (procedure)",
+              "cm:SN_17041000000103|FP22-death (finding)",
+              "cm:SN_18521000000102|Cause of death clarification status SD17/18 (finding)",
+              "cm:SN_23331000000109|SD17 - cause of death clarif (administrative concept)",
+              "cm:SN_374631000000101|Excluded from diabetic retinopathy screening as deceased (finding)",
+              "cm:SN_397071000000107|[X]Ill-defined and unknown causes of mortality (finding)",
+              "cm:SN_713461000000100|Death administration (record artifact)"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
