@@ -1,0 +1,225 @@
+{
+  "ModelDocument": {
+    "DocumentInfo": {
+      "documentId": "59792076-f1bb-4747-bff7-1431b7eee7e6",
+      "documentIri": "http://DiscoveryDataService.org/InformationModel/Query/qe1",
+      "modelIri": "http://DiscoveryDataService.org/InformationModel/ExampleQuery",
+      "effectiveDate": "2019-19-22:10:35:25",
+      "publisher": "DC_ORG_EHCT",
+      "purpose": "Reference",
+      "baseModelVersion": "1.0.0",
+      "documentStatus": "Draft",
+      "prefix": [
+        {
+          "label": "cm:",
+          "iri": "http://DiscoveryDataService.org/InformationModel/Core/"
+        },
+        {
+          "label": "vs:",
+          "iri": "https://DiscoveryDataService/InformationModel/ValueSets/"
+        }
+      ]
+    },
+    "Cohort": [
+      {
+        "id": "Cohort1",
+        "name": "Diabetics diagnosed 27-9 months ago continually registered with same practice after diagnosis",
+        "authoredDate": "2019-09-01",
+        "authoredBy": "David Stables",
+        "dataSubject": "cm:Person",
+        "criterion": [
+          {
+            "description": "diabetics first diagnosed 27 to 9 months ago",
+            "operator": "AND",
+            "class": "cm:Observation",
+            "filter": {
+              "attribute": {
+                "property": "concept",
+                "valueSet": "vs:DiabetesMellitusDiagnosis"
+              }
+            },
+            "restriction": {
+              "property": "effectiveDate",
+              "order": "Earliest",
+              "count": 1
+            },
+            "test": {
+              "attribute": {
+                "property": "effectiveDate",
+                "valueRange": {
+                  "from": {
+                    "operator": ">=",
+                    "valueFunction": {
+                      "baseFunction": "DateSubtraction",
+                      "parameter": [
+                        {
+                          "parameterToken": "MONTH"
+                        },
+                        {
+                          "variable": "REFERENCE_DATE"
+                        },
+                        {
+                          "valueNumeric": 27
+                        }
+                      ]
+                    }
+                  },
+                  "to": {
+                    "operator": "<=",
+                    "valueFunction": {
+                      "baseFunction": "DateSubtraction",
+                      "parameter": [
+                        {
+                          "parameterToken": "MONTH"
+                        },
+                        {
+                          "variable": "REFERENCE_DATE"
+                        },
+                        {
+                          "valueNumeric": 9
+                        }
+                      ]
+                    }
+                  }
+                },
+                "assignedProperty": "DIABETES_ONSET_DATE"
+              }
+            }
+          },
+          {
+            "description": "GMS Registered in London continuously since diaganosis",
+            "operator": "AND",
+            "class": "cm:GMS_Registration",
+            "filter": {
+              "attribute": [
+                {
+                  "function": {
+                    "baseFunction": "TimeDifference",
+                    "parameter": [
+                      {
+                        "parameterToken": "DAY"
+                      },
+                      {
+                        "property": "startDate"
+                      },
+                      {
+                        "definedProperty": "DIABETES_ONSET_DATE"
+                      }
+                    ]
+                  },
+                  "value": {
+                    "operator": ">=",
+                    "value": 0
+                  }
+                },
+                {
+                  "operator": "NOT",
+                  "function": {
+                    "baseFunction": "TimeDifference",
+                    "parameter": [
+                      {
+                        "parameterToken": "DAY"
+                      },
+                      {
+                        "property": "startDate"
+                      },
+                      {
+                        "property": "endDate"
+                      }
+                    ]
+                  },
+                  "value": {
+                    "operator": ">",
+                    "value": 0
+                  }
+                },
+                {
+                  "operator": "AND",
+                  "property": "organisation.commissionedBy.*parentOrganisation*.odsCode",
+                  "valueCode": "Y45"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "Cohort2",
+        "name": "Diabetics referred to educational service and subsequently seen",
+        "authoredDate": "2019-09-10",
+        "authoredBy": "David Stables",
+        "baseCohort": "Cohort1",
+        "dataSubject": "cm:Person",
+        "criterion": [
+          {
+            "description": "referred to educational service after diabetes onset date",
+            "class": "cm:Referral",
+            "filter": {
+              "attribute": [
+                {
+                  "property": "referralServiceType",
+                  "valueSet": "vs:DiabetesEdicationProgram"
+                },
+                {
+                  "operator": "AND",
+                  "function": {
+                    "baseFunction": "TimeDifference",
+                    "parameter": [
+                      {
+                        "parameterToken": "DAY"
+                      },
+                      {
+                        "definedProperty": "DIABETES_ONSET_DATE"
+                      },
+                      {
+                        "property": "referralDate"
+                      }
+                    ]
+                  },
+                  "value": {
+                    "operator": ">=",
+                    "value": 0
+                  },
+                  "assignedProperty": "EDUCATION_REFERRAL_DATE"
+                }
+              ]
+            }
+          },
+          {
+            "description": "Subsequently seen in one of the education services",
+            "operator": "AND",
+            "class": "cm:Encounter",
+            "filter": {
+              "attribute": [
+                {
+                  "property": "serviceProvider",
+                  "valueSet": "vs:London_Diabetes_Education_Services"
+                },
+                {
+                  "function": {
+                    "baseFunction": "TimeDifference",
+                    "parameter": [
+                      {
+                        "parameterToken": "DAY"
+                      },
+                      {
+                        "definedProperty": "DIABETES_ONSET_DATE"
+                      },
+                      {
+                        "property": "effectiveDate"
+                      }
+                    ]
+                  },
+                  "value": {
+                    "operator": ">=",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
