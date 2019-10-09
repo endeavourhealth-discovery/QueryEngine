@@ -1,0 +1,71 @@
+{
+	 "ModelDocument": {
+		 "documentInfo": {
+			 "documentId": "8e631d72-1cc3-488c-8f29-73bea2844007",
+			 "documentIri": "http://DiscoveryDataService.org/InformationModel/JacksQuery",
+			 "modelIri": "http://DiscoveryDataService.org/InformationModel/ExampleQuery",
+			 "effectiveDate": "2019-10-08:12:30:25",
+			 "publisher": "DC_ORG_EHCT",
+			 "purpose": "Reference",
+			 "baseModelVersion": "1.0.0",
+			 "documentStatus": "Draft",
+			 "prefix": [{
+				 "label": "cm:",
+				 "iri": "http://DiscoveryDataService.org/InformationModel/Core/"
+			}]
+		},
+		 "valueSet": [
+			 {
+				 "id": "DiabetesD1",
+				 "name": "Diabetes diagnosis",
+				 "expression": [
+					 {
+						 "classOrSubtypes": [
+							 "cm:SN_73211009 |Diabetes mellitus (disorder)|"
+						 ]
+					 }
+				 ]
+			 }],
+		 "cohort": [{
+			 "id": "Diabetes1",
+			 "name": "Diabetics over 45 years of age",
+			 "authoredDate": "2019-10-08",
+			 "authoredBy": "David Stables",
+			 "dataSubject": "cm:Person",
+			 "criterion": [
+				{
+					 "description": "diabetics",
+					 "operator": "AND",
+					 "class": "cm:Observation",
+					 "filter": {
+						 "attribute": {
+							 "property": "concept",
+							 "valueSet": "DiabetesD1"
+						}
+					}
+				},
+				{
+					 "description": "Aged over 45",
+					 "operator": "AND",
+					 "class": "cm:Person",
+					 "filter": {
+						 "attribute": {
+							 "function": {
+								 "name": "Age",
+								 "baseFunction": "TimeDifference",
+								 "parameter": [{
+										 "parameterToken": "YEAR",
+										 "property": "cm:dateOfBirth",
+										 "variable": "REFERENCE_DATE"}]
+							},
+							 "value": {
+								 "operator": ">=",
+								 "value": 45
+							}
+						}
+					}
+				}
+			]
+		}]
+	}
+}
