@@ -1,0 +1,183 @@
+{
+  "ModelDocument": {
+    "DocumentInfo": {
+      "documentId": "629b0086-7fec-4cae-b1a5-cb2c6fb8b754",
+      "documentIri": "http://DiscoveryDataService.org/InformationModel/Updates/ValueSet/Examples1",
+      "modelIri": "http://DiscoveryDataService.org/InformationModel/ValueSets/Examples1",
+      "effectiveDate": "2019-19-22:10:35:25",
+      "publisher": "DC_ORG_EHCT",
+      "purpose": "UpdateModel",
+      "baseModelVersion": "1.0.0",
+      "documentStatus": "Draft",
+      "prefix": {
+        "label": "cm:",
+        "iri": "http://DiscoveryDataService.org/InformationModel/Core/"
+      }
+    },
+    "ValueSet": [
+      {
+        "id": "PancTB",
+        "name": "Pancreatic TB Drugs",
+        "expression": [
+          {
+            "classOrSubtypes": [
+              "cm:SN_1039008|Product containing mercaptopurine (medicinal product)",
+              "cm:SN_6369005|Product containing penicillin and antibiotic (product)",
+              "cm:SN_6425004|Product containing histamine receptor antagonist (product)",
+              "cm:SN_7947003|Product containing aspirin (medicinal product)",
+              "cm:SN_8696009|Medicinal product acting as antispasmodic agent (product)",
+              "cm:SN_10632007|Multivitamin preparation (product)",
+              "cm:SN_10756001|Product containing haloperidol (medicinal product)",
+              "cm:SN_10784006|Medicinal product acting as antipsychotic agent (product)",
+              "cm:SN_11563006|Product containing vitamin D (product)",
+              "cm:SN_14601000|Product containing acetylcholine receptor antagonist (product)",
+              "cm:SN_16047007|Product containing benzodiazepine (product)",
+              "cm:SN_16403005|Non-steroidal anti-inflammatory agent (product)",
+              "cm:SN_26244009|Product containing muscarinic receptor antagonist (product)",
+              "cm:SN_28028002|Product containing synthetic hormone (product)",
+              "cm:SN_30125007|Product containing senna (medicinal product)",
+              "cm:SN_30492008|Medicinal product acting as diuretic (product)",
+              "cm:SN_33252009|Product containing beta adrenergic receptor antagonist (product)",
+              "cm:SN_34012005|Product containing sulfonylurea (product)",
+              "cm:SN_35476001|Product containing silver nitrate (medicinal product)",
+              "cm:SN_36236003|Medicinal product acting as antidepressant agent (product)",
+              "cm:SN_38076006|Product containing thyroxine (medicinal product)",
+              "cm:SN_39487003|Product containing insulin (medicinal product)",
+              "cm:SN_41193000|Product containing aciclovir (medicinal product)",
+              "cm:SN_41549009|Product containing angiotensin-converting enzyme inhibitor (product)",
+              "cm:SN_45844004|Product containing sulfasalazine (medicinal product)",
+              "cm:SN_48698004|Product containing calcium channel blocker (product)",
+              "cm:SN_53640004|Product containing fluoxetine (medicinal product)",
+              "cm:SN_56602009|Product containing hydroxycarbamide (medicinal product)",
+              "cm:SN_57952007|Medicinal product acting as antilipemic agent (product)",
+              "cm:SN_58944007|Medicinal product acting as vasodilator (product)",
+              "cm:SN_60169008|Medicinal product acting as antacid agent (product)",
+              "cm:SN_61621000|Medicinal product acting as laxative (product)",
+              "cm:SN_61946003|Product containing estrogen (product)",
+              "cm:SN_63094006|Medicinal product acting as anticonvulsant agent (product)",
+              "cm:SN_67507000|Medicinal product acting as antiarrhythmic agent (product)",
+              "cm:SN_74226000|Product containing vitamin K (product)",
+              "cm:SN_74674007|Product containing propofol (medicinal product)",
+              "cm:SN_75770001|Product containing urea in topical dosage form (medicinal product form)",
+              "cm:SN_77731008|Product containing acetylcysteine (medicinal product)",
+              "cm:SN_80229008|Product containing antimalarial (product)",
+              "cm:SN_81064004|Product containing vitamin B12 (product)",
+              "cm:SN_81759008|Immune enhancement agent (product)",
+              "cm:SN_81839001|Medicinal product acting as anticoagulant agent (product)",
+              "cm:SN_86977007|Product containing mesalazine (medicinal product)",
+              "cm:SN_87233003|Product containing low molecular weight heparin (product)",
+              "cm:SN_90332006|Product containing paracetamol (medicinal product)",
+              "cm:SN_91107009|Product containing caffeine (medicinal product)",
+              "cm:SN_96308008|Product containing angiotensin II receptor antagonist (product)",
+              "cm:SN_108418007|Product containing ondansetron (medicinal product)",
+              "cm:SN_108616001|Product containing leukotriene receptor antagonist (product)",
+              "cm:SN_108807002|Product containing monoclonal antibody (product)",
+              "cm:SN_108812001|Product containing pyrimidine analog (product)",
+              "cm:SN_108836002|Product containing brinzolamide (medicinal product)",
+              "cm:SN_108899006|Medicinal product acting as contraceptive (product)",
+              "cm:SN_108914001|Product containing acitretin (medicinal product)",
+              "cm:SN_108925005|Product containing terbinafine (medicinal product)",
+              "cm:SN_108940007|Product containing immunomodulator (product)",
+              "cm:SN_109054006|Product containing somatostatin analog (product)",
+              "cm:SN_109081006|Product containing metformin (medicinal product)",
+              "cm:SN_116092004|Product containing lipase inhibitor (product)",
+              "cm:SN_116523008|Product containing melatonin (medicinal product)",
+              "cm:SN_116596006|Product containing glucocorticoid (product)",
+              "cm:SN_116726003|Product containing loperamide (medicinal product)",
+              "cm:SN_135642004|Pneumococcal polysaccharide vaccine (product)",
+              "cm:SN_266715005|Steroid prophylaxis (procedure)",
+              "cm:SN_266717002|Hormone replacement therapy (procedure)",
+              "cm:SN_312061002|Electrolyte agent (product)",
+              "cm:SN_315053001|Statin prophylaxis (procedure)",
+              "cm:SN_318706009|Product containing moxonidine (medicinal product)",
+              "cm:SN_320933002|Product containing carbocisteine (medicinal product)",
+              "cm:SN_321174005|Product containing zopiclone (medicinal product)",
+              "cm:SN_322822007|Product containing sumatriptan (medicinal product)",
+              "cm:SN_323283001|Product containing nicotine (medicinal product)",
+              "cm:SN_324963001|Product containing piperazine (product)",
+              "cm:SN_327032007|Product containing oxaliplatin (medicinal product)",
+              "cm:SN_330769006|Product containing hypromellose (medicinal product)",
+              "cm:SN_330811006|Product containing carbomer (product)",
+              "cm:SN_346325008|Product containing antibacterial (product)",
+              "cm:SN_346441008|Product containing fish derived omega 3 fatty acid (medicinal product)",
+              "cm:SN_349849001|Product containing estrogen receptor antagonist (product)",
+              "cm:SN_349917000|Product containing alpha adrenergic receptor agonist (product)",
+              "cm:SN_350361002|Product containing gonad regulating hormone (product)",
+              "cm:SN_350553008|Product containing ferrous salt (product)",
+              "cm:SN_354078009|Intravenous fluids and electrolytes (product)",
+              "cm:SN_360204007|Product containing opioid receptor agonist (product)",
+              "cm:SN_363560004|Product containing serotonin 5-hydroxytryptamine-1 receptor agonist (product)",
+              "cm:SN_384952006|Product containing dopamine receptor agonist (product)",
+              "cm:SN_385610007|Product containing darbepoetin alfa (medicinal product)",
+              "cm:SN_407314008|Product containing enzyme inhibitor (product)",
+              "cm:SN_409391006|Product containing cinacalcet (medicinal product)",
+              "cm:SN_411399003|Product containing thiourea (medicinal product)",
+              "cm:SN_416636000|Product containing glucagon-like peptide 1 receptor agonist (product)",
+              "cm:SN_420804003|Product containing acamprosate (medicinal product)",
+              "cm:SN_421552005|Product containing alendronic acid (medicinal product)",
+              "cm:SN_421953007|Product containing iron sucrose (medicinal product)",
+              "cm:SN_432254002|Product containing fesoterodine (medicinal product)",
+              "cm:SN_703677008|Product containing sodium glucose cotransporter subtype 2 inhibitor (product)",
+              "cm:SN_764132007|Product containing dopamine receptor antagonist (product)",
+              "cm:SN_764135009|Product containing peroxisome proliferator-activated gamma receptor agonist (product)",
+              "cm:SN_764877006|Product containing zinc (medicinal product)",
+              "cm:SN_765073001|Product containing prostaglandin analog (product)",
+              "cm:SN_767565001|Product containing gamma-aminobutyric acid A receptor agonist (product)",
+              "cm:SN_768451002|Product containing calcium and calcium compound (product)",
+              "cm:SN_768625006|Product containing benzofuran (product)",
+              "cm:SN_768759001|Product containing steroid (product)",
+              "cm:SN_768761005|Product containing vitamin B (product)",
+              "cm:SN_768769007|Product containing carbohydrate derivative (product)",
+              "cm:SN_444361000124102|Electrolyte replacement supplement (product)",
+              "cm:SN_444381000124107|Liquid electrolyte replacement supplement (product)",
+              "cm:SN_15297811000001100|Risedronate sodium (product)",
+              "cm:SN_18037511000001105|Co-trimoxazole (product)"
+            ]
+          },
+          {
+            "expression": [
+              {
+                "classOrSubtypes": [
+                  "cm:SN_373873005|Pharmaceutical / biologic product (product)"
+                ]
+              },
+              {
+                "operator": "AND",
+                "attribute": [
+                  {
+                    "propertyOrSubtypes": [
+                      "cm:SN_127489000|Has active ingredient (attribute)"
+                    ],
+                    "value": {
+                      "classOrSubtypes": [
+                        "cm:SN_255632006|Anticonvulsant (substance)",
+                        "cm:SN_372560006|Antiplatelet agent (substance)",
+                        "cm:SN_372576002|Tetracyclic antidepressant (substance)",
+                        "cm:SN_372580007|Bronchodilator (substance)",
+                        "cm:SN_372665008|Non-steroidal anti-inflammatory agent (substance)",
+                        "cm:SN_372684006|Digestant (substance)",
+                        "cm:SN_372695000|Diuretic (substance)",
+                        "cm:SN_372787008|Vasodilator (substance)",
+                        "cm:SN_372800002|Laxative (substance)",
+                        "cm:SN_372813008|Antiarrhythmic agent (substance)",
+                        "cm:SN_372862008|Anticoagulant (substance)",
+                        "cm:SN_372881000|Vasoconstrictor (substance)",
+                        "cm:SN_373209002|Anxiolytic, sedative AND/OR hypnotic (substance)",
+                        "cm:SN_373253007|Tricyclic antidepressant (substance)",
+                        "cm:SN_373258003|Gastrointestinal agent (substance)",
+                        "cm:SN_373265006|Analgesic (substance)",
+                        "cm:SN_373267003|Antilipemic agent (substance)",
+                        "cm:SN_373293005|Antispasmodic (substance)",
+                        "cm:SN_418183005|Psychotropic agent (substance)"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
