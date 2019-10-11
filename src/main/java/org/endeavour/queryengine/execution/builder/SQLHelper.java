@@ -2,14 +2,12 @@ package org.endeavour.queryengine.execution.builder;
 
 import lombok.Data;
 import org.endeavour.queryengine.db.tables.Observation;
-import org.endeavour.queryengine.db.tables.records.PatientRecord;
 import org.jooq.*;
-import org.jooq.impl.DSL;
+
 import static org.jooq.impl.DSL.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static org.endeavour.queryengine.db.tables.Observation.OBSERVATION;
 import static org.endeavour.queryengine.db.tables.Patient.PATIENT;
@@ -24,15 +22,28 @@ public class SQLHelper {
     private List<SortField<?>> orderBy = new ArrayList<>();
     private List<Condition> conditions = new ArrayList<>();
 
+    DSLContext create = using(SQLDialect.MYSQL);
+
+    public DDLQuery getCreate() {
+
+        //maybe edit select??
+        //Be aware of create.createTableIfNotExists
+        return create.createTable("cohort").as( getSelect() );
+
+    }
+
     public Select<?> getSelect() {
-        DSLContext create = using(SQLDialect.MYSQL);
+
 
         Table table = getTable();
 
         //Doesn't appear to be needed, but nice way to have no conditions
 //        Condition co = conditions.stream().reduce(noCondition(), Condition::and);
 
+//        Select s = groupBy.isEmpty() ? select(select).from(table).where(conditions).orderBy(orderBy) :  select(select).from(table).where(conditions).groupBy(groupBy).orderBy(orderBy);
+
         Select s = null;
+
         if(groupBy.isEmpty()) {
             s = select(select).from(table).where(conditions).orderBy(orderBy);
         } else {
