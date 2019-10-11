@@ -23,8 +23,6 @@ import static org.endeavour.queryengine.db.tables.Patient.PATIENT;
  */
 public class SQLBuilder {
 
-    private SelectJoinStep<?> select;
-
     private ModelDocument modelDocument;
 
     private SQLHelper sqlHelper = new SQLHelper();
@@ -47,7 +45,6 @@ public class SQLBuilder {
             for (Criterion criterion : c.getCriterion()) {
                 Condition condition = getCondition(criterion);
                 sqlHelper.addCondition( condition );
-                select.where(condition);
             }
         }
     }
@@ -154,7 +151,6 @@ public class SQLBuilder {
 
     private void join(String clazz) {
         if (clazz.equals("cm:Observation")) {
-            select.join(OBSERVATION).on(OBSERVATION.PATIENT_ID.eq(PATIENT.ID));
             sqlHelper.addJoin(OBSERVATION);
         } else if (clazz.equals("cm:Person")) {
             //nothing to do yet
@@ -175,17 +171,15 @@ public class SQLBuilder {
 
         if (table == null) throw new QueryEngineException("Cannot determine select table");
 
-        DSLContext create = DSL.using(SQLDialect.MYSQL);
-
         sqlHelper.setFrom(table);
         sqlHelper.addSelect(PATIENT.ID);
-
-        select = create.select(PATIENT.ID).from(table);
     }
 
     public void log() {
-        //Info
-        log.info("Final sql : {}", select.getQuery().getSQL());
+
+        Select select = getSelect();
+
+        log.info("Final sql : {}", select.getSQL());
         log.info("Final binding : {}", select.getBindValues());
     }
 
@@ -203,6 +197,5 @@ public class SQLBuilder {
 
     public Select<?> getSelect() {
         return sqlHelper.getSelect();
-//        return select;
     }
 }
