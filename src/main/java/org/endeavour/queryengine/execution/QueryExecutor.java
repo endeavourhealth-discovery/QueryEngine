@@ -1,15 +1,9 @@
 package org.endeavour.queryengine.execution;
 
-import com.sun.corba.se.impl.orbutil.RepositoryIdStrings;
 import lombok.extern.slf4j.Slf4j;
-import org.endeavour.queryengine.db.*;
-import static org.endeavour.queryengine.db.tables.Observation.OBSERVATION;
-import static org.endeavour.queryengine.db.tables.Patient.PATIENT;
 
 import org.endeavour.queryengine.im.ModelDocument;
 import org.endeavour.queryengine.repository.Repository;
-import org.jooq.*;
-import org.jooq.impl.DSL;
 
 import java.sql.SQLException;
 
