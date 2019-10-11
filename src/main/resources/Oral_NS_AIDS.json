@@ -1,0 +1,57 @@
+{
+  "ModelDocument": {
+    "DocumentInfo": {
+      "documentId": "69782076-f1bb-4747-bff7-1431b7eee7e6",
+      "documentIri": "http://DiscoveryDataService.org/InformationModel/Updates/ValueSet/Examples2/OralNSAIDs",
+      "modelIri": "http://DiscoveryDataService.org/InformationModel/Examples",
+      "effectiveDate": "2019-19-22:10:35:25",
+      "publisher": "DC_ORG_EHCT",
+      "purpose": "Reference",
+      "baseModelVersion": "1.0.0",
+      "documentStatus": "Draft"
+    },
+    "ValueSet": [
+      {
+        "id": "OralNSAIDS",
+        "name": "Oral none steroidal anti-inflammatory drugs",
+        "expression": [
+          {
+            "expression": [
+              {
+                "classOrSubtypes": [
+                  "373873005|Pharmaceutical / biologic product (product)"
+                ]
+              },
+              {
+                "operator": "AND",
+                "attribute": {
+                  "propertyOrSubtypes": [
+                    "127489000|Has active ingredient (attribute)"
+                  ],
+                  "value": {
+                    "classOrSubtypes": [
+                      "767714007 |Propionic acid and propionic acid derivative (substance)"
+                    ]
+                  }
+                }
+              },
+              {
+                "operator": "AND",
+                "attribute": {
+                  "propertyOrSubtypes": [
+                    "411116001 |Has manufactured dose form (attribute)"
+                  ],
+                  "value": {
+                    "classOrSubtypes": [
+                      "85268001 |Oral dose form (dose form)|"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
